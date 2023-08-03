@@ -1,4 +1,4 @@
-package cl.awakelab.m7.sprint.web.controller;
+package cl.awakelab.m7.sprint.web.controller.rest;
 
 import cl.awakelab.m7.sprint.model.domain.dto.TableDTO;
 import cl.awakelab.m7.sprint.web.service.TableService;
