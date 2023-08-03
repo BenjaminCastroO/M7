@@ -9,7 +9,8 @@ import org.mapstruct.Mappings;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring" , uses = {TableMapper.class,
+        WaiterMapper.class})
 public interface OrderMapper {
   @Mappings({
           @Mapping(source ="id", target ="id"),
