@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.com">
+<head>
+  <meta charset="UTF-8">
+  <title>Bienvenido - Plato</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+  <div class="container">
+    <h2 th:if="${op=='c'}">Crear Plato</h2>
+    <h2 th:if="${op=='u'}">Editar Plato</h2>
+  </div>
+  <div class="container">
+    <form class="form" method="post" th:action="@{/plato/{op}(op=${op})}">
+      <div class="row">
+        <div class="row">
+          <div class="col">
+            <label class="form-label" for="id">Id:</label>
+            <input th:if="${op=='c'}" class="form-control" type="text"
+                   id="id" name="id">
+            <input th:if="${op=='u'}" class="form-control" type="hidden"
+                   id="id" name="id" th:value="${dish.getId()}">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label class="form-label" for="name">Nombre:</label>
+            <input th:if="${op=='c'}" class="form-control" type="text"
+                   id="name" name="name">
+            <input th:if="${op=='u'}" class="form-control" id="name"
+                   name="name" th:value="${dish.getName()}">
+          </div>
+        </div>
+          <div class="row">
+            <div class="col">
+              <label class="form-label" for="description">Descripción:</label>
+              <input th:if="${op=='c'}" class="form-control" type="text"
+                     id="description" name="description">
+              <input th:if="${op=='u'}" class="form-control" type="text"
+                     id="description" name="description" th:value="${dish.getDescription()}">
+            </div>
+          </div>
+        <div class="row">
+          <div class="col">
+            <label class="form-label" for="price">Precio:</label>
+            <input th:if="${op=='c'}" class="form-control" type="number"
+                   id="price" name="price">
+            <input th:if="${op=='u'}" class="form-control" type="number"
+                   id="price" name="price"
+                   th:value="${dish.getPrice()}">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label class="form-label" for="category">Categoría:</label>
+            <input th:if="${op=='c'}" class="form-control" type="text"
+                   id="category" name="category">
+            <input th:if="${op=='u'}" class="form-control" type="text"
+                   id="category" name="category"
+                   th:value="${usuario.getCategory()}">
+          </div>
+        <div class="row pt-4">
+          <div class="col">
+            <a href="/plato" class="btn btn-secondary">Volver</a>
+          </div>
+          <div class="col">
+            <button id = "enviar" name= "enviar" value = "plato" type="submit" class="btn btn-primary">Guardar</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+</body>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</html>
