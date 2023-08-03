@@ -13,9 +13,9 @@ import java.util.List;
 public interface TableMapper {
   @Mappings({
           @Mapping(source ="id", target ="id"),
-          @Mapping(source ="number", target ="number"),
-          @Mapping(source ="capacity", target ="capacity"),
-          @Mapping(source ="location", target ="location"),
+          @Mapping(source ="numero", target ="number"),
+          @Mapping(source ="capacidad", target ="capacity"),
+          @Mapping(source ="ubicacion", target ="location")
   })
   TableDTO toTableDTO(TableEntity tableEntity);
   List<TableDTO> toTableDTO(List<TableEntity> tableEntities);

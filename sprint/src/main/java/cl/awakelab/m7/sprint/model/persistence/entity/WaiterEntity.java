@@ -1,13 +1,17 @@
 package cl.awakelab.m7.sprint.model.persistence.entity;
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.util.Date;
-
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString
 @Entity
 @Table(name = "Camarero")
 public class WaiterEntity {
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name="Id")
   private int id;
   @Column(name="Nombre")

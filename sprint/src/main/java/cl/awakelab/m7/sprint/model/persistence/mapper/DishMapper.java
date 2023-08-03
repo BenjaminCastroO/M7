@@ -13,10 +13,10 @@ import java.util.List;
 public interface DishMapper {
   @Mappings({
           @Mapping(source ="id", target ="id"),
-          @Mapping(source ="name", target ="name"),
-          @Mapping(source ="description", target ="description"),
-          @Mapping(source ="price", target ="price"),
-          @Mapping(source ="category", target ="category"),
+          @Mapping(source ="nombre", target ="name"),
+          @Mapping(source ="descripcion", target ="description"),
+          @Mapping(source ="precio", target ="price"),
+          @Mapping(source ="categoria", target ="category")
   })
   DishDTO toDishDTO(DishEntity dishEntity);
   List<DishDTO> toDishDTO(List<DishEntity> dishEntities);

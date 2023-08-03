@@ -1,20 +1,25 @@
 package cl.awakelab.m7.sprint.model.persistence.entity;
 import jakarta.persistence.*;
-import java.util.Date;
+import lombok.*;
 
+import java.util.Date;
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString
 @Entity
 @Table(name = "Plato")
 public class DishEntity {
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name="Id")
+  @Column(name="ID")
   private int id;
   @Column(name="Nombre")
-  private String name;
+  private String nombre;
   @Column(name="Descripcion")
-  private String description;
+  private String descripcion;
   @Column(name="Precio")
-  private Double price;
+  private Double precio;
   @Column(name="Categoria")
-  private String category;
+  private String categoria;
 }

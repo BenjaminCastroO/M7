@@ -16,7 +16,7 @@ public interface OrderMapper {
           @Mapping(source ="table", target ="table"),
           @Mapping(source ="waiter", target ="waiter"),
           @Mapping(source ="date", target ="date"),
-          @Mapping(source ="total", target ="total"),
+          @Mapping(source ="total", target ="total")
   })
   OrderDTO toOrderDTO(OrderEntity orderEntity);
   List<OrderDTO> toOrderDTO(List<OrderEntity> orderEntities);
